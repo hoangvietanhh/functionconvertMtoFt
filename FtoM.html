@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="input"></label><input type="text" id="input" oninput="conver(this.value)" onchange="conver(this.value)">
+<label for="change"></label><select id="change">
+    <option value="Meter" id="meter" >Meter</option>
+    <option value="Feet" id="feet">Feet</option>
+</select>
+<span id="output">
+    <label>
+<input>
+</label>
+</span>
+
+</body>
+<script>
+    function conver(){
+        let c = document.getElementById('change');
+        let change = c.options[c.selectedIndex].id;
+        if (change === 'meter'){
+            converMeter()
+        }
+        if (change === 'feet'){
+            converFeet()
+        }
+    }
+
+
+
+    function converMeter(){
+       let meter = document.getElementById('input').value;
+        resultfeet = meter * 3.28;
+        document.getElementById('output').innerHTML = resultfeet;
+    }
+
+
+    function converFeet(){
+        let feet = document.getElementById('input').value;
+        resultmeter = feet * 0.305
+        document.getElementById('output').innerHTML = resultmeter;
+    }
+
+
+</script>
+</html>
